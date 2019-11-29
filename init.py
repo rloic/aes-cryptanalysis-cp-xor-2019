@@ -27,6 +27,8 @@ def run(cmd: List[str], cwd: str):
    subprocess.check_call(cmd, cwd=cwd)
 
 def extract(file: str, dest: str):
+   if not os.path.exists(dest):
+      os.mkdirs(dest)
    subprocess.check_call(['tar', '-xvzf', file, '-C', dest])
    
 def rm(file: str):
@@ -73,7 +75,7 @@ if __name__ == '__main__':
 	   print('Cannot install MiniZinc, you must install the {} file from hand'.format(minizinc_lib))
 	   
 	# Install Picat
-	if linux or mac:
+	if linux or mac
 		extract(PATH + picat_lib, PATH + 'Picat')
 		rm(PATH + picat_lib)
 	else:

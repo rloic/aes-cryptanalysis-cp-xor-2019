@@ -8,9 +8,9 @@ from typing import List
 
 PATH = sys.argv[0]
 if '/' in PATH:
-   PATH = PATH[:PATH.rindex('/')] + '/'
+   PATH = PATH[:PATH.rindex('/')]
 else:
-   PATH = './'
+   PATH = '.'
 
 linux = False
 mac = False
@@ -63,14 +63,14 @@ if __name__ == '__main__':
 	   print('Cannot be executed on {}'.format(sys.platform))
 	   exit(0)
 	   
-	urllib.request.urlretrieve('https://github.com/MiniZinc/MiniZincIDE/releases/download/2.2.3/' + minizinc_lib, PATH + minizinc_lib)
+	urllib.request.urlretrieve('https://github.com/MiniZinc/MiniZincIDE/releases/download/2.2.3/' + minizinc_lib, PATH + '/' + minizinc_lib)
 	urllib.request.urlretrieve('http://picat-lang.org/download/' + picat_lib, PATH + picat_lib)
-	urllib.request.urlretrieve('https://oss.sonatype.org/content/repositories/snapshots/org/choco-solver/choco-solver/3.3.4-SNAPSHOT/choco-solver-3.3.4-20151222.130658-1-with-dependencies.jar', PATH + 'choco-solver-3.3.4-with-dependencies.jar')
+	urllib.request.urlretrieve('https://oss.sonatype.org/content/repositories/snapshots/org/choco-solver/choco-solver/3.3.4-SNAPSHOT/choco-solver-3.3.4-20151222.130658-1-with-dependencies.jar', PATH + '/' + 'choco-solver-3.3.4-with-dependencies.jar')
 	
 	# Install MiniZinc
 	if linux:
-		extract(PATH + minizinc_lib, PATH + 'MiniZincIDE-2.2.3-bundle-linux-x86_64')
-		rm(PATH + minizinc_lib)
+		extract(PATH + '/' + minizinc_lib, PATH + '/' + 'MiniZincIDE-2.2.3-bundle-linux-x86_64')
+		rm(PATH + '/' + minizinc_lib)
 	else:
 	   print('Cannot install MiniZinc, you must install the {} file from hand'.format(minizinc_lib))
 	   
@@ -82,12 +82,12 @@ if __name__ == '__main__':
 	   print('Cannot install Picat, you must install the {} file from hand'.format(picat_lib))
 	   
 	run(['git', 'clone', 'https://gitlab.inria.fr/source_code/aes-cryptanalysis-cp-xor-2019.git'], PATH)
-	move_dir('aes-cryptanalysis-cp-xor-2019', PATH)
-	move_dir('aes-cryptanalysis-cp-xor-2019/.git', PATH + '.git')
-	rm(PATH + 'aes-cryptanalysis-cp-xor-2019')
-	rm(PATH + 'solve.sh')
-	rm(PATH + 'Makefile')
-	copy(PATH + 'Makefile.new', PATH + 'Makefile')
-	copy(PATH + 'solve.new.sh', PATH + 'solve.sh')
+	move_dir(PATH + '/' + 'aes-cryptanalysis-cp-xor-2019', PATH)
+	move_dir(PATH + '/' + 'aes-cryptanalysis-cp-xor-2019/.git', PATH + '/' + '.git')
+	rm(PATH + '/' + 'aes-cryptanalysis-cp-xor-2019')
+	rm(PATH + '/' + 'solve.sh')
+	rm(PATH + '/' + 'Makefile')
+	copy(PATH + '/' + 'Makefile.new', PATH + '/' + 'Makefile')
+	copy(PATH + '/' + 'solve.new.sh', PATH + '/' + 'solve.sh')
 	run(['make'], PATH)
 	os.chmod(PATH + 'solve.sh', 0o755)

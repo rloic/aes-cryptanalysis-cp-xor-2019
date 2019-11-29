@@ -88,4 +88,4 @@ if __name__ == '__main__':
 	copy(PATH + '/' + 'Makefile.new', PATH + '/' + 'Makefile')
 	copy(PATH + '/' + 'solve.new.sh', PATH + '/' + 'solve.sh')
 	run(['make'], PATH)
-	os.chmod(PATH + 'solve.sh', 0o755)
+	os.chmod(PATH + '/' + 'solve.sh', 0o755)

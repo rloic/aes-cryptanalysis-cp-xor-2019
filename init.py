@@ -39,7 +39,7 @@ def rm(file: str):
       
 def move_dir(srcDir, dstDir):
    if not os.path.exists(dstDir):
-      os.mkdir(dstDir)
+      os.makedirs(dstDir)
    if os.path.isdir(srcDir) and os.path.isdir(dstDir) :
       for filePath in glob.glob(srcDir + '/*'):
          shutil.move(filePath, dstDir);

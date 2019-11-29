@@ -63,13 +63,13 @@ if __name__ == '__main__':
 	   print('Cannot be executed on {}'.format(sys.platform))
 	   exit(0)
 	   
-	urllib.request.urlretrieve('https://github.com/MiniZinc/MiniZincIDE/releases/download/2.2.3/' + minizinc_lib, PATH + '/' + 'MiniZincIDE-2.2.3-bundle-linux')
+	urllib.request.urlretrieve('https://github.com/MiniZinc/MiniZincIDE/releases/download/2.2.3/' + minizinc_lib, PATH + '/' + minizinc_lib)
 	urllib.request.urlretrieve('http://picat-lang.org/download/' + picat_lib, PATH + '/' + picat_lib)
 	urllib.request.urlretrieve('https://oss.sonatype.org/content/repositories/snapshots/org/choco-solver/choco-solver/3.3.4-SNAPSHOT/choco-solver-3.3.4-20151222.130658-1-with-dependencies.jar', PATH + '/' + 'choco-solver-3.3.4-with-dependencies.jar')
 	
 	# Install MiniZinc
 	if linux:
-		extract(PATH + '/' + minizinc_lib, PATH + '/' + 'MiniZincIDE-2.2.3-bundle-linux-x86_64')
+		extract(PATH + '/' + minizinc_lib, PATH + '/' + 'MiniZincIDE-2.2.3-bundle-linux')
 		rm(PATH + '/' + minizinc_lib)
 	else:
 	   print('Cannot install MiniZinc, you must install the {} file from hand'.format(minizinc_lib))

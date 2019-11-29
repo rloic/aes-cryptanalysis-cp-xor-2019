@@ -76,8 +76,8 @@ if __name__ == '__main__':
 	   
 	# Install Picat
 	if linux or mac:
-		extract(PATH + picat_lib, PATH + 'Picat')
-		rm(PATH + picat_lib)
+		extract(PATH + '/' + picat_lib, PATH + '/' + 'Picat')
+		rm(PATH + '/' + picat_lib)
 	else:
 	   print('Cannot install Picat, you must install the {} file from hand'.format(picat_lib))
 	   

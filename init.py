@@ -67,14 +67,22 @@ if __name__ == '__main__':
 	
 	# Install MiniZinc
 	if linux:
+<<<<<<< HEAD
 		extract(PATH + minizinc_lib, PATH + 'MiniZincIDE-2.2.3-bundle-linux-x86_64')
+=======
+		extract(PATH + minizinc_lib)
+>>>>>>> master
 		rm(PATH + minizinc_lib)
 	else:
 	   print('Cannot install MiniZinc, you must install the {} file from hand'.format(minizinc_lib))
 	   
 	# Install Picat
 	if linux or mac:
+<<<<<<< HEAD
 		extract(PATH + picat_lib, PATH + 'Picat')
+=======
+		extract(PATH + picat_lib)
+>>>>>>> master
 		rm(PATH + picat_lib)
 	else:
 	   print('Cannot install Picat, you must install the {} file from hand'.format(picat_lib))

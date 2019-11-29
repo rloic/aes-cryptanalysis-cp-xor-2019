@@ -75,7 +75,7 @@ if __name__ == '__main__':
 	   print('Cannot install MiniZinc, you must install the {} file from hand'.format(minizinc_lib))
 	   
 	# Install Picat
-	if linux or mac
+	if linux or mac:
 		extract(PATH + picat_lib, PATH + 'Picat')
 		rm(PATH + picat_lib)
 	else:

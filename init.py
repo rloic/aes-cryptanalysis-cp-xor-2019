@@ -28,7 +28,7 @@ def run(cmd: List[str], cwd: str):
 
 def extract(file: str, dest: str):
    if not os.path.exists(dest):
-      os.mkdirs(dest)
+      os.makedirs(dest)
    subprocess.check_call(['tar', '-xvzf', file, '-C', dest])
    
 def rm(file: str):
@@ -39,7 +39,7 @@ def rm(file: str):
       
 def move_dir(srcDir, dstDir):
    if not os.path.exists(dstDir):
-      os.makedirs(dstDir)
+      os.mkdir(dstDir)
    if os.path.isdir(srcDir) and os.path.isdir(dstDir) :
       for filePath in glob.glob(srcDir + '/*'):
          shutil.move(filePath, dstDir);

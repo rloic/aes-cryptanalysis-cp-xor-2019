@@ -81,7 +81,7 @@ if __name__ == '__main__':
 	else:
 	   print('Cannot install Picat, you must install the {} file from hand'.format(picat_lib))
 	   
-	run(['git', 'clone', 'https://gitlab.inria.fr/source_code/aes-cryptanalysis-cp-xor-2019'], PATH)
+	run(['git', 'clone', 'https://gitlab.inria.fr/source_code/aes-cryptanalysis-cp-xor-2019.git'], PATH)
 	move_dir('aes-cryptanalysis-cp-xor-2019', PATH)
 	move_dir('aes-cryptanalysis-cp-xor-2019/.git', PATH + '.git')
 	rm(PATH + 'aes-cryptanalysis-cp-xor-2019')

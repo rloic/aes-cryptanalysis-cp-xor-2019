@@ -64,7 +64,7 @@ if __name__ == '__main__':
 	   exit(0)
 	   
 	urllib.request.urlretrieve('https://github.com/MiniZinc/MiniZincIDE/releases/download/2.2.3/' + minizinc_lib, PATH + '/' + minizinc_lib)
-	urllib.request.urlretrieve('http://picat-lang.org/download/' + picat_lib, PATH + picat_lib)
+	urllib.request.urlretrieve('http://picat-lang.org/download/' + picat_lib, PATH + '/' + picat_lib)
 	urllib.request.urlretrieve('https://oss.sonatype.org/content/repositories/snapshots/org/choco-solver/choco-solver/3.3.4-SNAPSHOT/choco-solver-3.3.4-20151222.130658-1-with-dependencies.jar', PATH + '/' + 'choco-solver-3.3.4-with-dependencies.jar')
 	
 	# Install MiniZinc

@@ -83,8 +83,6 @@ if __name__ == '__main__':
 	   
 	run(['git', 'clone', 'https://gitlab.inria.fr/source_code/aes-cryptanalysis-cp-xor-2019.git'], PATH)
 	move_dir(PATH + '/' + 'aes-cryptanalysis-cp-xor-2019', PATH)
-	move_dir(PATH + '/' + 'aes-cryptanalysis-cp-xor-2019/.git', PATH + '/' + '.git')
-	rm(PATH + '/' + 'aes-cryptanalysis-cp-xor-2019')
 	rm(PATH + '/' + 'solve.sh')
 	rm(PATH + '/' + 'Makefile')
 	copy(PATH + '/' + 'Makefile.new', PATH + '/' + 'Makefile')

@@ -29,7 +29,7 @@ def run(cmd: List[str], cwd: str):
 def extract(file: str, dest: str):
    if not os.path.exists(dest):
       os.makedirs(dest)
-   subprocess.check_call(['tar', '-xvzf', file, '-C', dest])
+   subprocess.check_call(['tar', '-xvzf', file, '-C', dest, '--strip-components', '1'])
    
 def rm(file: str):
    if os.path.isdir(file):

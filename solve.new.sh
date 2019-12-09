@@ -27,7 +27,7 @@ if [ $shift == "shift" ]
  cat Heuristics/shift_picat >> /tmp/$file.mzn
  while [[ $DX != '' ]]; do
   MiniZincIDE-2.2.3-bundle-linux/bin/mzn2fzn /tmp/$file.mzn -D "KEY_BITS=$KB;r=$n; objStep1=$obj";
-  sh -c "time $HOME/Picat/picat $HOME/Picat/lib/fzn_picat_sat.pi /tmp/$file.fzn " 2&> /tmp/$file-time;
+  sh -c "time Picat/picat Picat/lib/fzn_picat_sat.pi /tmp/$file.fzn " 2&> /tmp/$file-time;
   DX=$(cat /tmp/$file-time | grep 'DX' | sed "s/DX/DX$i/g" );
   DSBK=$(cat /tmp/$file-time | grep 'DSBK' | sed "s/DSBK/DSBK$i/g" );
   time=$(cat /tmp/$file-time | grep 'user\|sys' );
@@ -47,7 +47,7 @@ else
  cat Heuristics/normal >> /tmp/$file.mzn
  while [[ $DX != '' ]]; do
   MiniZincIDE-2.2.3-bundle-linux/bin/mzn2fzn /tmp/$file.mzn -D "KEY_BITS=$KB;r=$n; objStep1=$obj"; 
-  sh -c "time $HOME/Picat/picat $HOME/Picat/lib/fzn_picat_sat.pi /tmp/$file.fzn " 2&> /tmp/$file-time;
+  sh -c "time Picat/picat Picat/lib/fzn_picat_sat.pi /tmp/$file.fzn " 2&> /tmp/$file-time;
   DX=$(cat /tmp/$file-time | grep 'DX' | sed "s/DX/DX$i/g" );
   DK=$(cat /tmp/$file-time | grep 'DK' | sed "s/DK/DK$i/g" );
   DZ=$(cat /tmp/$file-time | grep 'DZ' | sed "s/DZ/DZ$i/g" );
